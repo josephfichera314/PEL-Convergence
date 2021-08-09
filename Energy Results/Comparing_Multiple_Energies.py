@@ -157,7 +157,8 @@ for i in range(steps):
 # Color scheme using color-blind friendly colors
 CB_color_cycle = ['c', 'm', 'sienna', 'k','y','salmon']
 
-# Plot differences in cumulative average energies and E_L
+"""Plot differences in cumulative average energies and E_L
+This plot yields Fig. 5 in the main text."""
 fig,ax1 = plt.subplots()
 ax1.plot(n_skip*iterations[:5000],energies_cumul_ave_met_diff_0725[:5000], 
     c = CB_color_cycle[0])
@@ -172,7 +173,7 @@ ax1.plot(n_skip*iterations,energies_cumul_ave_PEL_diff_2, c = CB_color_cycle[2],
 ax1.legend(('Canonical: T*=0.725','Canonical: T*=1','Canonical: T*=2',
     'PEL: T*=0.725','PEL: T*=1','PEL: T*=2'), 
     loc = 'lower right', prop = {"size":12})
-plt.xlabel('MC Steps', fontsize = 15) # (n = {}, step size = {}$\sigma$)'.format(n_total,np.round(1/np.sqrt(2*alpha)/sigma, 2)), fontsize = 12.5)# t_relax))
+plt.xlabel('MC Steps', fontsize = 15)
 plt.ylabel(r'Cumulative $(\langle V \rangle - E_{L})/(N\epsilon)$', 
     fontsize = 15)
 plt.ylim(-1.0,1.0)
