@@ -51,7 +51,9 @@ f.close()
 # Color scheme using color-blind friendly colors
 CB_color_cycle = ['c', 'm', 'sienna', 'k','y','salmon']
 
-# Plot cumulative average energies
+"""Plot cumulative average energies. This will yield Fig. 2
+in the main text, and Fig. S.1, S.4 and S.7 in the
+supplemental."""
 fig,ax1 = plt.subplots()
 ax1.plot(n_skip*iterations,energies_cumul_ave_met, 
     c = CB_color_cycle[0])
@@ -60,7 +62,7 @@ ax1.plot(n_skip*iterations,energies_cumul_ave_PEL,
 ax1.plot(n_skip*iterations,landscape_energy, c = 'black')
 ax1.legend(('Canonical','PEL','landscape energy: {}'.format(energy_land)),
     loc = 'upper right', prop = {"size":12})
-plt.xlabel('MC Steps', fontsize = 15) # (n = {}, step size = {}$\sigma$)'.format(n_total,np.round(1/np.sqrt(2*alpha)/sigma, 2)), fontsize = 12.5)# t_relax))
+plt.xlabel('MC Steps', fontsize = 15)
 plt.ylabel(r'Cumulative Average Potential Energy $\langle V \rangle/(N\epsilon)$', 
     fontsize = 15)
 plt.ylim(-6.5,-4.0) # use for T*=2
